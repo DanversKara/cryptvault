@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<info>
+    <id>cryptvault</id>
+    <name>CryptVault</name>
+    <summary>Open and manage VeraCrypt-compatible encrypted volumes right inside Nextcloud</summary>
+    <description>Click a .hc volume file, enter its password, and browse, read, write and manage the files inside — no FUSE, no root, no Docker required. Pure PHP implementation of the VeraCrypt volume format (AES-256-XTS) with FAT and exFAT filesystem support.</description>
+    <version>1.0.4</version>
+    <licence>agpl</licence>
+    <author>DanversKara</author>
+    <namespace>CryptVault</namespace>
+    <category>files</category>
+    <bugs>https://github.com/DanversKara/cryptvault/issues</bugs>
+    <dependencies>
+        <nextcloud min-version="28" max-version="36"/>
+        <php min-version="8.1"/>
+    </dependencies>
+    <navigations>
+        <navigation>
+            <name>CryptVault</name>
+            <route>cryptvault.page.index</route>
+            <icon>img/app.svg</icon>
+        </navigation>
+    </navigations>
+</info>

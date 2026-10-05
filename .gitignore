@@ -1,0 +1,4 @@
+# nextcloud app dev
+/.vscode/
+*~
+.DS_Store
