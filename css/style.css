@@ -27,3 +27,41 @@
 .cv-toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--color-main-text); color: var(--color-main-background); padding: 10px 18px; border-radius: 8px; z-index: 1100; }
 .cv-toast.err { background: var(--color-error); color: #fff; }
 button.error { color: var(--color-error); }
+
+/* ---------- mobile: card layout, big touch targets ---------- */
+@media (max-width: 640px) {
+    .cryptvault { padding: 12px; }
+    .cv-panel { padding: 14px; }
+    .cv-header { flex-wrap: wrap; gap: 10px; }
+    .cv-header h2 { font-size: 1.3em; }
+
+    /* toolbar buttons: 2-column grid of tall touch targets */
+    .cv-browser-actions { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
+    .cv-browser-actions button { min-height: 44px; }
+
+    /* long paths scroll instead of breaking the layout */
+    .cv-breadcrumb { overflow-x: auto; white-space: nowrap; max-width: 100%; padding-bottom: 4px; }
+
+    /* file table -> card list */
+    .cv-table thead { display: none; }
+    .cv-table, .cv-table tbody, .cv-table tr, .cv-table td { display: block; width: 100%; box-sizing: border-box; }
+    .cv-table tr { border-bottom: 1px solid var(--color-border); padding: 10px 0; }
+    .cv-table td { border: none; padding: 2px 0; }
+    .cv-table td:nth-child(1) { font-weight: 600; word-break: break-word; font-size: 1.02em; }
+    .cv-table td:nth-child(2), .cv-table td:nth-child(3) {
+        display: inline; width: auto; color: var(--color-text-lighter); font-size: 0.85em;
+    }
+    .cv-table td:nth-child(2)::after { content: '\00b7'; margin: 0 6px; }
+    .cv-table td.cv-row-actions {
+        display: flex; gap: 8px; margin-top: 8px;
+        white-space: normal; text-align: left;
+    }
+    .cv-table td.cv-row-actions button { flex: 1; margin-left: 0; min-height: 42px; }
+
+    /* modal fits the screen */
+    .cv-modal { padding: 16px; box-sizing: border-box; }
+    .cv-modal-box { min-width: 0; width: 100%; max-width: 100%; box-sizing: border-box; }
+
+    /* toast stays on screen */
+    .cv-toast { left: 16px; right: 16px; transform: none; text-align: center; }
+}
